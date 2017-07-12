@@ -6,6 +6,8 @@ import Feed from '../screens/Feed';
 import Settings from '../screens/Settings';
 import UserDetail from '../screens/UserDetail';
 import Me from '../screens/Me';
+import Programs from '../screens/Programs'
+import Notifications from '../screens/Notifications'
 
 export const FeedStack = StackNavigator({
   Feed: {
@@ -27,14 +29,28 @@ export const Tabs = TabNavigator(
     Feed: {
       screen: FeedStack,
       navigationOptions: {
-        tabBarLabel: 'Feed',
+        tabBarLabel: 'Timeline',
         tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      },
+    },
+    Program: {
+      screen: Programs,
+      navigationOptions: {
+        tabBarLabel: 'Program',
+        tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+      },
+    },
+    Notification: {
+      screen: Notifications,
+      navigationOptions: {
+        tabBarLabel: 'Notification',
+        tabBarIcon: ({ tintColor }) => <Icon name="notifications" size={35} color={tintColor} />
       },
     },
     Me: {
       screen: Me,
       navigationOptions: {
-        tabBarLabel: 'Me',
+        tabBarLabel: 'Profile',
         tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
       },
     },
